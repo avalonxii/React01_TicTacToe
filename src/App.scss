@@ -1,0 +1,96 @@
+@use './theme' as theme;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: theme.$primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.turns{
+    height: 4.5rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    &_players{
+        width: 100%;
+        justify-self: start;
+        display: flex;
+        gap: 1rem;
+        
+        &--o,
+        &--x{
+            height: 4.5rem;
+        }
+    }
+
+    &_turn{
+        width: 100%;
+        background-color: theme.$primary-light;
+        box-shadow: 0.2rem 0.5rem theme.$primary-dark;
+    }
+    
+    &_back{
+        background-color: theme.$tie-color;
+        box-shadow: 0.25rem 0.3125rem theme.$tie-color-dark;
+        width: 80px;
+        justify-self: end;
+        border: none;
+
+    }
+}
+
+.tablero{
+    width: 33%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    &_casilla{
+        height: 9.375rem;
+        width: 10.375rem;
+        background-color: theme.$primary-light;
+        box-shadow: 0.2rem 0.5rem theme.$primary-dark;
+    }
+}
+
+.info{
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    height: 5.35rem;
+
+    &_x-player,
+    &_tie,
+    &_o-player{
+        width: 100% !important;
+    }
+
+    &_x-player{
+        background-color: theme.$x-color;
+        box-shadow: 0.25rem 0.3125rem theme.$x-color-dark;
+    }
+
+    &_tie{
+        background-color: theme.$tie-color;
+        box-shadow: 0.25rem 0.3125rem theme.$tie-color-dark;
+    }
+    
+    &_o-player{
+        background-color: theme.$o-color;
+        box-shadow: 0.25rem 0.3125rem theme.$o-color-dark;
+    }
+}
+
+
+
+
